@@ -9,30 +9,34 @@ namespace Snackautomat
 {
     internal class Payment
     {
-        public Payment() {
-                       
-        
-        }
-        //public static double cashInput(double input)
-        //{
-
-        //    Console.WriteLine("\n\nAchtung! Automat nimmt zur Zeit ausschließlich 5 oder 10 Euro Scheine!\nMit welchem Schein möchten Sie bezahlen?");
-        //    double bankNote = Convert.ToDouble(Console.ReadLine());
-        //    return bankNote;
-        //}
-        public static void payment(int product)
+       
+        public static void Cashout(int product)                              //product =  the position of the ordered drink in the list
         {
-            
-            Console.WriteLine(Program.drinks[product].Name + "\t\t" + Program.drinks[product].Price + "\tEuro" + "\n\t\t" + Program.drinks[product].Calories + "\tKalorien" + "\n\t\t" + Program.drinks[product].Sugar + "g \tZucker");
+            bool check = true;
+            Console.WriteLine("\n\n" + Program.drinks[product].Name + "\n\t\t" + Program.drinks[product].Price + "\tEuro" + "\n\t\t" + Program.drinks[product].Calories + "\tKalorien" + "\n\t\t" + Program.drinks[product].Sugar + "g \tZucker");
             Console.WriteLine("\n\nAchtung! Automat nimmt zur Zeit ausschließlich 5 oder 10 Euro Scheine!\nMit welchem Schein möchten Sie bezahlen?");
-            double bankNote = Convert.ToDouble(Console.ReadLine());            
-            double price = Program.drinks[product].Price;
-            double change = bankNote-price;
-            Console.WriteLine("Ihr Restgeld betraegt " + change);
+            do
+            {
+                try
+                {                    
+                    double bankNote = Convert.ToDouble(Console.ReadLine());
+                    if(bankNote == 5 || bankNote == 10)
+                    {
+                        check = false;                                          //correct bill inserted, boolean is set false so that while loop finishes
+                        double price = Program.drinks[product].Price;
+                        double change = bankNote - price;
+                        Console.WriteLine("Ihr Restgeld betraegt " + change);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Der Automat nimmt aktuell nur 5 Euro oder 10 Euro Scheine");
+                    }
+                    
+                }catch
+                {
+                    Console.WriteLine("\nFalsche Eingabe!\nBitte nur 5 und 10 Euro Noten");
+                }
+            }while(check);
         }
-        
-        
-
-
     }
 }

@@ -8,9 +8,6 @@ namespace Snackautomat
 {
     class Drinks
     {
-        public Drinks()
-        {
-        }
 
         public Drinks(string name, double size, double price, int calories, int sugar)
         {

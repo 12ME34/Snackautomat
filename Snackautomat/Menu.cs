@@ -10,18 +10,16 @@ namespace Snackautomat
     {
         public Menu()
         {
+            //Input of drinks
 
-
-            Program.drinks.Add(new Drinks() { Name = "Cola", Size = 0.5, Price = 1.25, Calories = 500, Sugar = 100 });
-            Program.drinks.Add(new Drinks() { Name = "1 l Cola", Size = 1.0, Price = 2.40, Calories = 1000, Sugar = 200 });
-            Program.drinks.Add(new Drinks() { Name = "Fanta", Size = 0.5, Price = 1.25, Calories = 500, Sugar = 100 });
-            Program.drinks.Add(new Drinks() { Name = "1 l Fanta", Size = 1.0, Price = 2.40, Calories = 1000, Sugar = 200 });
-            Program.drinks.Add(new Drinks() { Name = "Mineralwasser", Size = 0.5, Price = 1.40, Calories = 0, Sugar = 0 });
-            Program.drinks.Add(new Drinks() { Name = "1 l Mineralwasser", Size = 1.0, Price = 2.80, Calories = 0, Sugar = 0 });
-            Program.drinks.Add(new Drinks() { Name = "Eistee", Size = 0.5, Price = 1.40, Calories = 350, Sugar = 95 });
-            Program.drinks.Add(new Drinks() { Name = "1 l Eistee", Size = 1.0, Price = 2.80, Calories = 700, Sugar = 190 });            
-
-
+            Program.drinks.Add(new Drinks("Cola", 0.5, 1.75, 500, 100 ));
+            Program.drinks.Add(new Drinks("1l Cola", 1.0, 3.40, 1000, 200 ));
+            Program.drinks.Add(new Drinks("Fanta", 0.5, 1.55, 500,  100 ));
+            Program.drinks.Add(new Drinks("1l Fanta", 1.0, 3.10,  1000,  200 ));
+            Program.drinks.Add(new Drinks("Mineralwasser", 0.5,  2.40,  0,  0 ));
+            Program.drinks.Add(new Drinks( "1 l Mineralwasser",  4.2,  2.80,  0,  0 ));
+            Program.drinks.Add(new Drinks("Eistee",  0.5, 1.40,  350,  95 ));
+            Program.drinks.Add(new Drinks("1l Eistee",  1.0,  2.80,  700,  190 ));            
 
 
             bool nochmal = true;
@@ -29,7 +27,7 @@ namespace Snackautomat
             {
                 try
                 {
-                    Console.WriteLine("\n\nAuswahl:\n 1\tCola\n 2\tFanta\n 3\tMineralwasser\n 4\tEistee\n 0\tBeenden");
+                    Console.WriteLine("\n\nAuswahl:\n 1\t-->\tCola\n 2\t-->\tFanta\n 3\t-->\tMineralwasser\n 4\t-->\tEistee\n 0\t-->\tBeenden"); //Main menu
                     int auswahl = Convert.ToInt32(Console.ReadLine());
                     switch (auswahl)
                     {
@@ -39,13 +37,13 @@ namespace Snackautomat
                             int sizeCola = Convert.ToInt32(Console.ReadLine());
                             if (sizeCola == 1)                            
                             {
-                                int product = 0;                                // product = 0 -> an welcher Stelle in der Liste das Produkt XY gespeichert ist
-                                Payment.payment(product);                         
+                                int product = 0;                                // product = 0 -> is the position of the drink in the list. In this case "0,5 cola"
+                                Payment.Cashout(product);                         
        
                             }else if(sizeCola == 2)
                             {
                                 int product = 1;                               
-                                Payment.payment(product);
+                                Payment.Cashout(product);
 
                             }
                             break;
@@ -56,13 +54,13 @@ namespace Snackautomat
                             if (sizeFanta == 1)
                             {
                                 int product = 2;                                
-                                Payment.payment(product);
+                                Payment.Cashout(product);
 
                             }
                             else if (sizeFanta == 2)
                             {
                                 int product = 3;                                
-                                Payment.payment(product);
+                                Payment.Cashout(product);
                             }
                             break;
                         case 3:
@@ -72,13 +70,13 @@ namespace Snackautomat
                             if (sizeMineralwasser == 1)
                             {
                                 int product = 4;                                
-                                Payment.payment(product);
+                                Payment.Cashout(product);
 
                             }
                             else if (sizeMineralwasser == 2)
                             {
                                 int product = 5;                                
-                                Payment.payment(product);
+                                Payment.Cashout(product);
                             }
                             break;
                         case 4:
@@ -88,13 +86,13 @@ namespace Snackautomat
                             if (sizeIcetea == 1)
                             {
                                 int product = 6;                                
-                                Payment.payment(product);
+                                Payment.Cashout(product);
 
                             }
                             else if (sizeIcetea == 2)
                             {
                                 int product = 7;                               
-                                Payment.payment(product);
+                                Payment.Cashout(product);
                             }
                             break;
                         case 0:

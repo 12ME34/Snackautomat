@@ -15,12 +15,8 @@ namespace Snackautomat
         static public void Main(string[] args)
         {
             Console.WriteLine("Snackautomat [Start]\n");
-            
-
             new Menu();
-           
-            
-
+            Console.ReadKey();
         }
     }
 }
