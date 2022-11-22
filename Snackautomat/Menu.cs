@@ -17,10 +17,17 @@ namespace Snackautomat
             Program.drinks.Add(new Drinks("Fanta", 0.5, 1.55, 500,  100 ));
             Program.drinks.Add(new Drinks("1l Fanta", 1.0, 3.10,  1000,  200 ));
             Program.drinks.Add(new Drinks("Mineralwasser", 0.5,  2.40,  0,  0 ));
-            Program.drinks.Add(new Drinks( "1 l Mineralwasser",  4.2,  2.80,  0,  0 ));
+            Program.drinks.Add(new Drinks( "1 l Mineralwasser",  1.0,  4.80,  0,  0 ));
             Program.drinks.Add(new Drinks("Eistee",  0.5, 1.40,  350,  95 ));
-            Program.drinks.Add(new Drinks("1l Eistee",  1.0,  2.80,  700,  190 ));            
+            Program.drinks.Add(new Drinks("1l Eistee",  1.0,  2.80,  700,  190 ));
 
+            
+            
+            
+
+            //Program.drinks[0].Price = 2.00;
+            
+            //Console.WriteLine(Program.drinks[0].Price);
 
             bool nochmal = true;
             while (nochmal)
@@ -28,13 +35,12 @@ namespace Snackautomat
                 try
                 {
                     Console.WriteLine("\n\nAuswahl:\n 1\t-->\tCola\n 2\t-->\tFanta\n 3\t-->\tMineralwasser\n 4\t-->\tEistee\n 0\t-->\tBeenden"); //Main menu
-                    int auswahl = Convert.ToInt32(Console.ReadLine());
-                    switch (auswahl)
+                    int choice = Convert.ToInt32(Console.ReadLine());
+                    switch (choice)
                     {
                         case 1:
-                            Console.Clear();
-                            Console.WriteLine("\nDruecke 1 fuer ein Cola 0,5l \nDruecke 2 fuer ein Cola 1,0l");
-                            int sizeCola = Convert.ToInt32(Console.ReadLine());
+                            Console.Clear();                            
+                            int sizeCola = SizeOf(choice);
                             if (sizeCola == 1)                            
                             {
                                 int product = 0;                                // product = 0 -> is the position of the drink in the list. In this case "0,5 cola"
@@ -49,8 +55,7 @@ namespace Snackautomat
                             break;
                         case 2:
                             Console.Clear();
-                            Console.WriteLine("\nDruecke 1 fuer ein Fanta 0,5l \nDruecke 2 fuer ein Fanta 1,0l");
-                            int sizeFanta = Convert.ToInt32(Console.ReadLine());
+                            int sizeFanta = SizeOf(choice);
                             if (sizeFanta == 1)
                             {
                                 int product = 2;                                
@@ -65,8 +70,7 @@ namespace Snackautomat
                             break;
                         case 3:
                             Console.Clear();
-                            Console.WriteLine("\nDruecke 1 fuer ein Mineralwasser 0,5l \nDruecke 2 fuer ein Mineralwasser 1,0l");
-                            int sizeMineralwasser = Convert.ToInt32(Console.ReadLine());
+                            int sizeMineralwasser = SizeOf(choice);
                             if (sizeMineralwasser == 1)
                             {
                                 int product = 4;                                
@@ -81,8 +85,7 @@ namespace Snackautomat
                             break;
                         case 4:
                             Console.Clear();
-                            Console.WriteLine("\nDruecke 1 fuer ein Eistee 0,5l \nDruecke 2 fuer ein Eistee 1,0l");
-                            int sizeIcetea = Convert.ToInt32(Console.ReadLine());
+                            int sizeIcetea = SizeOf(choice);
                             if (sizeIcetea == 1)
                             {
                                 int product = 6;                                
@@ -107,6 +110,30 @@ namespace Snackautomat
                     Console.WriteLine("Falsche Eingabe");
                 }
             }
+        }
+        public int SizeOf(int choice)
+        {
+            bool check = true;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("\nDruecke 1 fuer ein " + Program.drinks[choice - 1].Name + " 0,5l \nDruecke 2 fuer ein " + Program.drinks[choice - 1].Name + " 1,0l");
+                    int sizeOf = Convert.ToInt32(Console.ReadLine());
+                    if (sizeOf == 1 || sizeOf == 2)
+                    {
+                        check = false;
+                        return sizeOf;
+                    }
+                    Console.WriteLine("Bitte geben Sie die korrekte Auswahl ein");
+                }
+                catch
+                {
+                    Console.WriteLine("Bitte geben Sie die korrekte Auswahl ein");
+                }
+                
+            } while (check);
+            return 0;                        
         }
         
     }
