@@ -19,15 +19,8 @@ namespace Snackautomat
             Program.drinks.Add(new Drinks("Mineralwasser", 0.5,  2.40,  0,  0 ));
             Program.drinks.Add(new Drinks( "1 l Mineralwasser",  1.0,  4.80,  0,  0 ));
             Program.drinks.Add(new Drinks("Eistee",  0.5, 1.40,  350,  95 ));
-            Program.drinks.Add(new Drinks("1l Eistee",  1.0,  2.80,  700,  190 ));
+            Program.drinks.Add(new Drinks("1l Eistee",  1.0,  2.80,  700,  190 ));           
 
-            
-            
-            
-
-            //Program.drinks[0].Price = 2.00;
-            
-            //Console.WriteLine(Program.drinks[0].Price);
 
             bool nochmal = true;
             while (nochmal)
