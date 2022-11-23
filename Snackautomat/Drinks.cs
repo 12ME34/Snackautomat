@@ -6,26 +6,17 @@ using System.Threading.Tasks;
 
 namespace Snackautomat
 {
-    class Drinks
+    internal class Drinks : Snacks
     {
-        
-        public Drinks(string name, double size, double price, int calories, int sugar)
+        public Drinks(string name, double price, int calories, double size, int sugar) : base(name, price, calories)
         {
-            Name = name;
-            Size= size;
-            Price = price;
-            Calories = calories;
+            Size = size;
             Sugar = sugar;
-
         }
-        public string Name { get; set; }
+
         public double Size { get; set; }
-        public double Price { get; private set; }
-        public int Calories { get; set; }
         public int Sugar { get; set; }
+        
+    }
 
-
-    }   
 }
-    
-

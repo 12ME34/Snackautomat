@@ -13,7 +13,7 @@ namespace Snackautomat
         public static void Cashout(int product)                              //product =  the position of the ordered drink in the list
         {
             bool check = true;
-            Console.WriteLine("\n\n" + Program.drinks[product].Name + "\n\t\t" + Program.drinks[product].Price + "\tEuro" + "\n\t\t" + Program.drinks[product].Calories + "\tKalorien" + "\n\t\t" + Program.drinks[product].Sugar + "g \tZucker");
+            Console.WriteLine("\n\n" +  FoodAndBaverages.drinks[product].Name + "\n\t\t" + FoodAndBaverages.drinks[product].Price + "\tEuro" + "\n\t\t" + FoodAndBaverages.drinks[product].Calories + "\tKalorien" + "\n\t\t" + FoodAndBaverages.drinks[product].Sugar + "g \tZucker");
             Console.WriteLine("\n\nAchtung! Automat nimmt zur Zeit ausschließlich 5 oder 10 Euro Scheine!\nMit welchem Schein möchten Sie bezahlen?");
             do
             {
@@ -23,9 +23,9 @@ namespace Snackautomat
                     if(bankNote == 5 || bankNote == 10)
                     {
                         check = false;                                          //correct bill inserted, boolean is set false so that while loop finishes
-                        double price = Program.drinks[product].Price;
+                        double price = FoodAndBaverages.drinks[product].Price;
                         double change = bankNote - price;
-                        Console.WriteLine("Ihr Restgeld betraegt " + change);
+                        Console.WriteLine("Ihr Restgeld betraegt " + Math.Round(change, 2));
                     }
                     else
                     {
@@ -34,7 +34,7 @@ namespace Snackautomat
                     
                 }catch
                 {
-                    Console.WriteLine("\nFalsche Eingabe!\nBitte nur 5 und 10 Euro Noten");
+                    Console.WriteLine("\nFalsche Eingabe! Bitte nur 5 und 10 Euro Noten");
                 }
             }while(check);
         }
