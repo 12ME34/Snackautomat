@@ -8,10 +8,10 @@ namespace Snackautomat
 {
     internal class Sweets : Snacks
     {
-        public double Weight;
-        public double Sugar;
+        public double Weight { get; set; }
+        public int Sugar { get; set; }
 
-        public Sweets(string name, double price, int calories, double weight, double sugar) : base(name, price, calories)
+        public Sweets(string name, double price, int calories, double weight, int sugar) : base(name, price, calories)
         {
             Weight = weight;
             Sugar = sugar;

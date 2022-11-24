@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Snackautomat
 {
+    
     internal class Payment
     {
-       
+        
+
         public static void Cashout(int product)                              //product =  the position of the ordered drink in the list
         {
+
             bool check = true;
             Console.WriteLine("\n\n" +  FoodAndBaverages.drinks[product].Name + "\n\t\t" + FoodAndBaverages.drinks[product].Price + "\tEuro" + "\n\t\t" + FoodAndBaverages.drinks[product].Calories + "\tKalorien" + "\n\t\t" + FoodAndBaverages.drinks[product].Sugar + "g \tZucker");
             Console.WriteLine("\n\nAchtung! Automat nimmt zur Zeit ausschließlich 5 oder 10 Euro Scheine!\nMit welchem Schein möchten Sie bezahlen?");

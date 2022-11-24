@@ -13,7 +13,8 @@ namespace Snackautomat
         
 
         static public void Main(string[] args)
-        {            
+        {
+            
             new Menu();
             Console.ReadKey();
         }

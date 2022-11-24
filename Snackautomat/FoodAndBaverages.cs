@@ -34,7 +34,8 @@ namespace Snackautomat
             spicy.Add(new Spicy("Erdnuesse", 3.00, 500, 250, 72));
             spicy.Add(new Spicy("Streichkaese", 1.75, 75, 50, 3));
      
-        }   
+        }
+        
         
         
 

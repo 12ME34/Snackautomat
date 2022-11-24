@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Snackautomat
 {
-    internal class SubMenuDrinks   {
-
-
-        public void ChoiceDrinks()
+    internal class SubMenuDrinks   
+    {
+        public void ChooseDrink()
         {
             bool again = true;
             while (again)
@@ -24,28 +23,40 @@ namespace Snackautomat
                         case 1:
                             Console.Clear();
                             SizeOfDrink(choice);
+                            again = false;
+                            new Menu();
 
                             break;
                         case 2:
                             Console.Clear();
                             SizeOfDrink(choice);
+                            again = false;
+                            new Menu();
 
                             break;
                         case 3:
                             Console.Clear();
                             SizeOfDrink(choice);
+                            again = false;
+                            new Menu();
 
                             break;
                         case 4:
                             Console.Clear();
                             SizeOfDrink(choice);
+                            again = false;
+                            new Menu();                           
 
                             break;
-                        case 0:
-                            Console.WriteLine("Auf Wiedersehen");
-                            again = false;
-                            break;
+                            //case 0:
+                            //    Console.WriteLine("Auf Wiedersehen");
+                            //    again = false;
+                            //    break;
+
+                            // Programm soll nach jeder Auswahl ins Hauptmenü zurückspringen!!!!
                     }
+                    
+
                 }
                 catch
                 {
@@ -54,11 +65,12 @@ namespace Snackautomat
             }
         }
 
-    
         public void SizeOfDrink(int choice)
         {
+            ShoppingBasket shoppingBasket = new ShoppingBasket();
             int counter = -1;
             int sizeOfBottle = 0;
+            int indexOfSpicy = counter + choice + (choice - 1);
             bool check = true;
             do
             {
@@ -85,8 +97,10 @@ namespace Snackautomat
                 }
 
             } while (check);
-            Payment.Cashout(counter + choice + (choice - 1) + sizeOfBottle);      //The call is now dynamic, the list of drinks can be enhanced infinite unless there are always 0,5 and 1l bottles                   
-        }                                                                       //Ich muss es erneut programmieren, Liste soll auf Speicherplatz untersucht werden!!!
-
+            
+            shoppingBasket.FillShoppingBasketDrink(indexOfSpicy);
+            //Payment.Cashout(counter + choice + (choice - 1) + sizeOfBottle);      //The call is now dynamic, the list of drinks can be enhanced infinite unless there are always 0,5 and 1l bottles                   
+        
+        }
     }
 }
