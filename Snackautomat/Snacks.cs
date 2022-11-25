@@ -22,6 +22,7 @@ namespace Snackautomat
         public virtual void SnackOutput()
         {
             Console.WriteLine("Virtuelle Methode");
+
         }
 
 
