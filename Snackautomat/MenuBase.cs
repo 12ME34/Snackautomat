@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snackautomat
 {
-    public class Menu
+    internal class MenuBase
     {
-        public static void MainMenu()
+        public void Menu()
         {
-                       
             bool again = true;
             //Input of drinks            
             new FoodAndBaverages();
@@ -19,7 +14,6 @@ namespace Snackautomat
             {
                 try
                 {
-                    Console.Clear();
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur " +
                     "Auswahl:\n\n 1\t-->\tGetraenke\n 2\t-->\tSuesses\n 3\t-->\tPikantes\n 0\t-->\tBeenden"); //Main menu
                     int choiceMain = Convert.ToInt32(Console.ReadLine());
@@ -50,15 +44,12 @@ namespace Snackautomat
                 }
                 catch
                 {
-                    Console.Clear();
                     Console.WriteLine("Falsche Eingabe");
                 }
 
-            } while (again);            
-                         
-            
-        }
-        
+            } while (again);
 
+
+        }
     }
 }

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Drinks.cs" />
     <Compile Include="indexOf.cs" />
+    <Compile Include="MenuBase.cs" />
     <Compile Include="ShoppingBasket.cs" />
     <Compile Include="Snacks.cs" />
     <Compile Include="FoodAndBaverages.cs" />

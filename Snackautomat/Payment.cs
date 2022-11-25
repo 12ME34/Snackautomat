@@ -8,38 +8,60 @@ using System.Threading.Tasks;
 namespace Snackautomat
 {
     
-    internal class Payment
+    public class Payment
     {
         
 
-        public static void Cashout(int product)                              //product =  the position of the ordered drink in the list
+        public static void Cashier(double totalPrice)
         {
-
-            bool check = true;
-            Console.WriteLine("\n\n" +  FoodAndBaverages.drinks[product].Name + "\n\t\t" + FoodAndBaverages.drinks[product].Price + "\tEuro" + "\n\t\t" + FoodAndBaverages.drinks[product].Calories + "\tKalorien" + "\n\t\t" + FoodAndBaverages.drinks[product].Sugar + "g \tZucker");
-            Console.WriteLine("\n\nAchtung! Automat nimmt zur Zeit ausschließlich 5 oder 10 Euro Scheine!\nMit welchem Schein möchten Sie bezahlen?");
+ 
+            double totalInsertedMoney = 0;
+            double insertedMoney = 0;
+            
+            Console.Clear();
+                Console.WriteLine("Der komplette Betrag Ihres Einkaus ist " + totalPrice);
             do
             {
                 try
-                {                    
-                    double bankNote = Convert.ToDouble(Console.ReadLine());
-                    if(bankNote == 5 || bankNote == 10)
-                    {
-                        check = false;                                          //correct bill inserted, boolean is set false so that while loop finishes
-                        double price = FoodAndBaverages.drinks[product].Price;
-                        double change = bankNote - price;
-                        Console.WriteLine("Ihr Restgeld betraegt " + Math.Round(change, 2));
-                    }
-                    else
-                    {
-                        Console.WriteLine("Der Automat nimmt aktuell nur 5 Euro oder 10 Euro Scheine");
-                    }
-                    
-                }catch
                 {
-                    Console.WriteLine("\nFalsche Eingabe! Bitte nur 5 und 10 Euro Noten");
+                    
+                    Console.WriteLine("\n\nDer Automat nimmt folgende Scheine und Muenzen entgegen:\n" +
+                        "5 und 10 Euro Scheine\n" +
+                        "2 Euro, 1 Euro, 50 Cent, 20 Cent, 10 Cent, 5 Cent");
+
+                    do
+                    {
+                        insertedMoney = Convert.ToDouble(Console.ReadLine());
+                        if (insertedMoney==10|| insertedMoney == 5 || insertedMoney == 2 || insertedMoney == 1 || insertedMoney == 0.50 || insertedMoney == 0.20 ||
+                            insertedMoney == 0.10 || insertedMoney == 0.05)
+                        {
+                            totalInsertedMoney = totalInsertedMoney + insertedMoney;
+                            if (totalInsertedMoney < totalPrice)
+                            {
+                                Console.WriteLine("Sie muessen noch " + (totalPrice - totalInsertedMoney) + " Euro einwerfen");
+                            }
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\nDer Automat nimmt folgende Scheine und Muenzen entgegen:\n" +
+                            "5 und 10 Euro Scheine\n" +
+                            "2 Euro, 1 Euro, 50 Cent, 20 Cent, 10 Cent, 5 Cent");
+                            Console.WriteLine("\nDer komplette Betrag Ihres Einkaus ist " + totalPrice);
+                            Console.WriteLine("Sie muessen noch " + (totalPrice - totalInsertedMoney) + " Euro einwerfen");
+                        }
+                        
+                    } while (totalInsertedMoney < totalPrice);
+                    Console.WriteLine("Ihr Restgeld betraegt " + Math.Round((totalInsertedMoney - totalPrice), 2) + "\nVielen Dank fuer Ihren Einkauf");
+                    System.Threading.Thread.Sleep(5000);
+                    ShoppingBasket.shoppingBasket.Clear();                  //After the payment, the shoppingBasket List will be deleted
                 }
-            }while(check);
+                catch
+                {
+                    Console.WriteLine("Bitte geben Sie die gueltigen Zahlungsmoeglichkeiten ein");
+                }
+            } while (totalInsertedMoney < totalPrice);            
+
         }
     }
 }

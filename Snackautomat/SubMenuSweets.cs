@@ -15,8 +15,9 @@ namespace Snackautomat
             {
                 try
                 {
+                    Console.Clear();
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur " +
-                        "Auswahl:\n\n 1\t-->\tMars\n 2\t-->\tSnickers\n 3\t-->\tBounty\n 4\t-->\tTwix\n 0\t-->\tBeenden"); //Main menu
+                        "Auswahl:\n\n 1\t-->\tMars\n 2\t-->\tSnickers\n 3\t-->\tBounty\n 4\t-->\tTwix\n 0\t-->\tRetour"); //Main menu
                     int choice = Convert.ToInt32(Console.ReadLine());
                     //Liste durchsuchen
                     //Eine Liste anlegen in der die items variabel sind!!!
@@ -44,8 +45,7 @@ namespace Snackautomat
                             WhichSweet("Twix");
                             again = false;
                             break;
-                        case 0:
-                            Console.WriteLine("Auf Wiedersehen");
+                        case 0:                            
                             again = false;
                             break;
                     }
@@ -66,10 +66,8 @@ namespace Snackautomat
             {
                
                 if (swe.Name == choice)
-                {
-                    Console.WriteLine(i);
-                    indexOfSweet=i;
-                    
+                {                    
+                    indexOfSweet=i;                    
                 }
                 i++;
             }

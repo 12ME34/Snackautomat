@@ -15,8 +15,9 @@ namespace Snackautomat
             {
                 try
                 {
+                    Console.Clear();
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur " +
-                        "Auswahl:\n\n 1\t-->\tChips\n 2\t-->\tSalamibrot\n 3\t-->\tErdnuesse\n 4\t-->\tStreichkaese\n 0\t-->\tBeenden"); //Main menu
+                        "Auswahl:\n\n 1\t-->\tChips\n 2\t-->\tSalamibrot\n 3\t-->\tErdnuesse\n 4\t-->\tStreichkaese\n 0\t-->\tRetour"); //Main menu
                     int choice = Convert.ToInt32(Console.ReadLine());
                     //Liste durchsuchen
                     //Eine Liste anlegen in der die items variabel sind!!!
@@ -42,15 +43,15 @@ namespace Snackautomat
                             WhichSpicy("Streichkaese");
                             again = false;
                             break;
-                        case 0:
-                            Console.WriteLine("Auf Wiedersehen");
+                        case 0:                            
                             again = false;
                             break;
                     }
                 }
                 catch
                 {
-                    Console.WriteLine("Falsche Eingabe");
+                    Console.Clear();
+                    //Console.WriteLine("Falsche Eingabe");
                 }
             }
         }
@@ -63,8 +64,7 @@ namespace Snackautomat
             {
                 
                 if (swe.Name == choice)
-                {
-                    Console.WriteLine(i);
+                {                    
                     indexOfSpicy = i;
                 }
                 i++;

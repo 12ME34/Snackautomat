@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Snackautomat
 {
-    internal abstract class Snacks {
+    internal abstract class Snacks 
+    {
         public string Name { get; set; }        
         public double Price { get; private set; }
         public int Calories { get; set; }        
@@ -18,9 +19,14 @@ namespace Snackautomat
             Calories = calories;         
 
         }
+        public virtual void SnackOutput()
+        {
+            Console.WriteLine("Virtuelle Methode");
+        }
 
-        
+
     }
+    
 
 }
     

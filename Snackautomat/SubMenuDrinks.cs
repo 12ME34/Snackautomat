@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snackautomat
 {
+    //Console clearen wenn er eine andere Zahl eingibt -> Kommentar ist unten auch nochmal
     internal class SubMenuDrinks   
     {
         public void ChooseDrink()
@@ -15,7 +16,8 @@ namespace Snackautomat
             {
                 try
                 {
-                    Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur Auswahl:\n\n 1\t-->\tCola\n 2\t-->\tFanta\n 3\t-->\tMineralwasser\n 4\t-->\tEistee\n 0\t-->\tBeenden"); //Main menu
+                    Console.Clear();
+                    Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur Auswahl:\n\n 1\t-->\tCola\n 2\t-->\tFanta\n 3\t-->\tMineralwasser\n 4\t-->\tEistee\n"); //Main menu
                     int choice = Convert.ToInt32(Console.ReadLine());
 
                     switch (choice)
@@ -24,7 +26,7 @@ namespace Snackautomat
                             Console.Clear();
                             SizeOfDrink(choice);
                             again = false;
-                            new Menu();
+                            //new Menu();
 
                             break;
                         case 2:
@@ -48,18 +50,14 @@ namespace Snackautomat
                             new Menu();                           
 
                             break;
-                            //case 0:
-                            //    Console.WriteLine("Auf Wiedersehen");
-                            //    again = false;
-                            //    break;
-
-                            // Programm soll nach jeder Auswahl ins Hauptmenü zurückspringen!!!!
+                     //Console clearen wenn er eine andere Zahl eingibt  
                     }
                     
 
                 }
                 catch
                 {
+                    Console.Clear();
                     Console.WriteLine("Falsche Eingabe");
                 }
             }
@@ -70,7 +68,7 @@ namespace Snackautomat
             ShoppingBasket shoppingBasket = new ShoppingBasket();
             int counter = -1;
             int sizeOfBottle = 0;
-            int indexOfSpicy = counter + choice + (choice - 1);
+            int indexOfBottle = 0;
             bool check = true;
             do
             {
@@ -97,8 +95,8 @@ namespace Snackautomat
                 }
 
             } while (check);
-            
-            shoppingBasket.FillShoppingBasketDrink(indexOfSpicy);
+            indexOfBottle = sizeOfBottle + counter + choice + (choice - 1);
+            shoppingBasket.FillShoppingBasketDrink(indexOfBottle);
             //Payment.Cashout(counter + choice + (choice - 1) + sizeOfBottle);      //The call is now dynamic, the list of drinks can be enhanced infinite unless there are always 0,5 and 1l bottles                   
         
         }
