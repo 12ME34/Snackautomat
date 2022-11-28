@@ -16,7 +16,7 @@ namespace Snackautomat
         public FoodAndBaverages()
         {            
             drinks.Add(new Drinks("Cola", 1.75, 500, 5, 0.5, 100));            //0     //1
-            drinks.Add(new Drinks("1l Cola", 3.0, 1000, 5, 1.0, 200));         //1
+            drinks.Add(new Drinks("1l Cola", 3.10, 1000, 5, 1.0, 200));        //1
             drinks.Add(new Drinks("Fanta", 1.55, 500, 5, 0.5, 100));           //2     //2
             drinks.Add(new Drinks("1l Fanta", 3.10, 1000, 5, 1.0, 200));       //3
             drinks.Add(new Drinks("Mineralwasser", 2.0, 0, 5, 0.5, 0));        //4     //3

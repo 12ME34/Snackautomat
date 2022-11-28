@@ -43,24 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Drinks.cs" />
-    <Compile Include="indexOf.cs" />
-    <Compile Include="MenuBase.cs" />
+    <Compile Include="Base_Child_Classes\Drinks.cs" />
     <Compile Include="ShoppingBasket.cs" />
-    <Compile Include="Snacks.cs" />
+    <Compile Include="Base_Child_Classes\Snacks.cs" />
     <Compile Include="FoodAndBaverages.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Spicy.cs" />
-    <Compile Include="SubMenuDrinks.cs" />
-    <Compile Include="SubMenuSpicy.cs" />
-    <Compile Include="SubMenuSweets.cs" />
-    <Compile Include="Sweets.cs" />
+    <Compile Include="Base_Child_Classes\Spicy.cs" />
+    <Compile Include="SubMenus\SubMenuDrinks.cs" />
+    <Compile Include="SubMenus\SubMenuSpicy.cs" />
+    <Compile Include="SubMenus\SubMenuSweets.cs" />
+    <Compile Include="Base_Child_Classes\Sweets.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

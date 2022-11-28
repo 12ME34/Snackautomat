@@ -13,9 +13,8 @@ namespace Snackautomat
         {
                        
             bool again = true;
-            //Input of drinks            
-            
-          
+            //Input of drinks          
+
             do
             {
                 try
@@ -46,6 +45,9 @@ namespace Snackautomat
                         case 0:
                             again = false;
                             Console.WriteLine("Danke fuer Ihren Besuch!\nAuf Wiedersehen");
+                            Environment.Exit(0);
+                            Console.ReadKey();
+
                             break;
                     }
                 }

@@ -15,9 +15,10 @@ namespace Snackautomat
             Weight = weight;
             Carbonhydrats = carbonhydrats;
         }
-        //public override void SnackOutput()
-        //{
-        //    Console.WriteLine("Ausgabe Child Klasse");
-        //}
+        public override string SnackOutput()
+        {
+            return Convert.ToString(Price);
+        }
+        
     }
 }

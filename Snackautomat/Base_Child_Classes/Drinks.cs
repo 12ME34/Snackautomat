@@ -16,7 +16,13 @@ namespace Snackautomat
 
         public double Size { get; set; }
         public int Sugar { get; set; }
-        
+
+        public override string SnackOutput()
+        {
+            return Name;
+
+        }
+
     }
 
 }

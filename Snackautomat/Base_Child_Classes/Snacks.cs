@@ -20,11 +20,11 @@ namespace Snackautomat
             Calories = calories;
             Count = count;
         }
-        //public virtual void SnackOutput()
-        //{
-        //    Console.WriteLine("Virtuelle Methode");
+       public virtual string SnackOutput()
+        {
+           return Name + Price;           
 
-        //}
+        }
 
 
     }

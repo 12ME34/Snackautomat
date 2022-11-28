@@ -17,8 +17,7 @@ namespace Snackautomat
             while (again)
             {
                 try
-                {
-                    
+                {                    
                     Console.Clear();
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur Auswahl:" +
                         "\n\n 1\t-->\tCola\t\t\t"+ FoodAndBaverages.drinks[0].Count+" Stk 0,5l verfuegbar \t  ||\t" + FoodAndBaverages.drinks[1].Count + " Stk 1l verfuegbar" +
@@ -112,7 +111,7 @@ namespace Snackautomat
             
             if (FoodAndBaverages.drinks[indexOfBottle].Count == 0)
             {
-                Console.WriteLine(FoodAndBaverages.drinks[indexOfBottle].Name + " ist aktuell nicht verfuegbar!\nBitte waehlen Sie einen anderen Drink");
+                Console.WriteLine(FoodAndBaverages.drinks[indexOfBottle].Name + " ist aktuell nicht verfuegbar!\nBitte waehlen Sie einen anderen Artikel");
                 System.Threading.Thread.Sleep(4000);
             }
             else if(FoodAndBaverages.drinks[indexOfBottle].Count > 0)

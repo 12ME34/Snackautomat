@@ -13,14 +13,17 @@ namespace Snackautomat
 
         
         public static void Cashier(double totalPrice)
-        {
-            ShoppingBasket basket = new ShoppingBasket();
+        {            
+            ShoppingBasket basket = new ShoppingBasket();          
+            
             double totalInsertedMoney = 0;
             double insertedMoney = 0;
+            
             
             Console.Clear();
             for (int i = 0; i < ShoppingBasket.shoppingBasket.Count; i++)
             {
+                
                 Console.WriteLine(ShoppingBasket.shoppingBasket[i].Name + " " + ShoppingBasket.shoppingBasket[i].Price);
                 
             }            
@@ -52,6 +55,7 @@ namespace Snackautomat
                             Console.WriteLine("\nDer Automat nimmt folgende Scheine und Muenzen entgegen:\n" +
                             "5 und 10 Euro Scheine\n" +
                             "2 Euro, 1 Euro, 50 Cent, 20 Cent, 10 Cent, 5 Cent");
+                            
                             Console.WriteLine("\nDer komplette Betrag Ihres Einkaus ist " + totalPrice);
                             Console.WriteLine("Sie muessen noch " + (totalPrice - totalInsertedMoney) + " Euro einwerfen");
                         }

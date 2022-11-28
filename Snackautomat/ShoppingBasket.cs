@@ -9,8 +9,7 @@ namespace Snackautomat
     public class ShoppingBasket
     {
         
-        public static List<ShoppingBasket> shoppingBasket = new List<ShoppingBasket>();
-        
+        public static List<ShoppingBasket> shoppingBasket = new List<ShoppingBasket>();       
         
         
             public string Name { get; set; }
@@ -34,7 +33,7 @@ namespace Snackautomat
         
         public void FillShoppingBasketSweets(int indexOf)
         {
-            
+           
             shoppingBasket.Add(new ShoppingBasket(FoodAndBaverages.sweets[indexOf].Name, FoodAndBaverages.sweets[indexOf].Price, FoodAndBaverages.sweets[indexOf].Calories, 
                 FoodAndBaverages.sweets[indexOf].Weight, FoodAndBaverages.sweets[indexOf].Sugar));            
            // Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
@@ -54,6 +53,7 @@ namespace Snackautomat
            // Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
             Again();
         }
+
         public void Again()
         {           
             int counter = shoppingBasket.Count;
@@ -79,13 +79,13 @@ namespace Snackautomat
                             Payment.Cashier(totalPrice);
                             Menu.MainMenu();
                         }
+                        //Console.Clear();
                         Console.WriteLine("Moechten Sie noch einen Artikel einkaufen (max. 3 Artikel)?\n1=[ja]\n2=[nein]");                    
                         choise = Convert.ToInt32(Console.ReadLine());
                     
                         if (choise == 1)
                         {
-                            Menu.MainMenu();
-                            
+                            Menu.MainMenu();                            
                         }
                         else if (choise == 2)
                         {
