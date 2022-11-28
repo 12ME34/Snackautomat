@@ -10,20 +10,21 @@ namespace Snackautomat
     {
         public string Name { get; set; }        
         public double Price { get; private set; }
-        public int Calories { get; set; }        
+        public int Calories { get; set; }   
+        public int Count { get; set; }  
 
-        public Snacks(string name, double price, int calories )
+        public Snacks(string name, double price, int calories, int count)
         {
-            Name = name;            
+            Name = name;
             Price = price;
-            Calories = calories;         
-
+            Calories = calories;
+            Count = count;
         }
-        public virtual void SnackOutput()
-        {
-            Console.WriteLine("Virtuelle Methode");
+        //public virtual void SnackOutput()
+        //{
+        //    Console.WriteLine("Virtuelle Methode");
 
-        }
+        //}
 
 
     }

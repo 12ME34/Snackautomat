@@ -10,16 +10,21 @@ namespace Snackautomat
     
     public class Payment
     {
-        
 
+        
         public static void Cashier(double totalPrice)
         {
- 
+            ShoppingBasket basket = new ShoppingBasket();
             double totalInsertedMoney = 0;
             double insertedMoney = 0;
             
             Console.Clear();
-                Console.WriteLine("Der komplette Betrag Ihres Einkaus ist " + totalPrice);
+            for (int i = 0; i < ShoppingBasket.shoppingBasket.Count; i++)
+            {
+                Console.WriteLine(ShoppingBasket.shoppingBasket[i].Name + " " + ShoppingBasket.shoppingBasket[i].Price);
+                
+            }            
+            Console.WriteLine("\nDer komplette Betrag Ihres Einkaus ist " + totalPrice);
             do
             {
                 try
@@ -53,6 +58,7 @@ namespace Snackautomat
                         
                     } while (totalInsertedMoney < totalPrice);
                     Console.WriteLine("Ihr Restgeld betraegt " + Math.Round((totalInsertedMoney - totalPrice), 2) + "\nVielen Dank fuer Ihren Einkauf");
+
                     System.Threading.Thread.Sleep(5000);
                     ShoppingBasket.shoppingBasket.Clear();                  //After the payment, the shoppingBasket List will be deleted
                 }

@@ -17,7 +17,13 @@ namespace Snackautomat
                 {
                     Console.Clear();
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur " +
-                        "Auswahl:\n\n 1\t-->\tMars\n 2\t-->\tSnickers\n 3\t-->\tBounty\n 4\t-->\tTwix\n 0\t-->\tRetour"); //Main menu
+                        "Auswahl:\n\n " +
+                        "1\t-->\tMars\t\t " + FoodAndBaverages.sweets[0].Count +" Stk verfuegbar"+"\n " +
+                        "2\t-->\tSnickers\t " + FoodAndBaverages.sweets[1].Count + " Stk verfuegbar" + "\n " +
+                        "3\t-->\tBounty\t\t " + FoodAndBaverages.sweets[2].Count + " Stk verfuegbar" + "\n " +
+                        "4\t-->\tTwix\t\t " + FoodAndBaverages.sweets[3].Count + " Stk verfuegbar" + "\n " +
+                        "0\t-->\tRetour"); //Main menu
+          
                     int choice = Convert.ToInt32(Console.ReadLine());
                     //Liste durchsuchen
                     //Eine Liste anlegen in der die items variabel sind!!!
@@ -71,10 +77,19 @@ namespace Snackautomat
                 }
                 i++;
             }
-            Console.WriteLine("Ein " + FoodAndBaverages.sweets[indexOfSweet].Name + " kostet " + FoodAndBaverages.sweets[indexOfSweet].Price + " Euro");
-            shoppingBasket.FillShoppingBasketSweets(indexOfSweet);
-            // shoppingBasket.shoppingBasket.Add(FoodAndBaverages.sweets[indexOfSweet].Name + FoodAndBaverages.sweets[indexOfSweet].Price + FoodAndBaverages.sweets[indexOfSweet].Calories + FoodAndBaverages.sweets[indexOfSweet].Weight + FoodAndBaverages.sweets[indexOfSweet].Sugar);
 
+            if (FoodAndBaverages.sweets[indexOfSweet].Count == 0)
+            {
+                Console.WriteLine(FoodAndBaverages.sweets[indexOfSweet].Name + " ist aktuell nicht verfuegbar!\nBitte waehlen Sie einen anderen Sweet");
+                System.Threading.Thread.Sleep(4000);
+            }
+            else if (FoodAndBaverages.sweets[indexOfSweet].Count > 0)
+            {
+                FoodAndBaverages.sweets[indexOfSweet].Count = FoodAndBaverages.sweets[indexOfSweet].Count - 1;        //Anzahl der Getränke in der Sweets wird aktualisiert
+                
+                shoppingBasket.FillShoppingBasketSweets(indexOfSweet);
+            }
+           
         }
     }
 }

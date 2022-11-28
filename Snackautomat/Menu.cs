@@ -8,13 +8,14 @@ namespace Snackautomat
 {
     public class Menu
     {
+
         public static void MainMenu()
         {
                        
             bool again = true;
             //Input of drinks            
-            new FoodAndBaverages();
-            //!!!!!Input Absicherung nicht vergessen!!!!!!!!
+            
+          
             do
             {
                 try

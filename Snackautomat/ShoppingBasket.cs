@@ -37,21 +37,21 @@ namespace Snackautomat
             
             shoppingBasket.Add(new ShoppingBasket(FoodAndBaverages.sweets[indexOf].Name, FoodAndBaverages.sweets[indexOf].Price, FoodAndBaverages.sweets[indexOf].Calories, 
                 FoodAndBaverages.sweets[indexOf].Weight, FoodAndBaverages.sweets[indexOf].Sugar));            
-            Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
+           // Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
             Again();
         }
         public void FillShoppingBasketSpicy(int indexOf)
         {
             shoppingBasket.Add(new ShoppingBasket(FoodAndBaverages.spicy[indexOf].Name, FoodAndBaverages.spicy[indexOf].Price, FoodAndBaverages.spicy[indexOf].Calories,
                 FoodAndBaverages.spicy[indexOf].Weight, FoodAndBaverages.spicy[indexOf].Carbonhydrats));
-            Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
+           // Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
             Again();
         }
         public void FillShoppingBasketDrink(int indexOf)
         {
             shoppingBasket.Add(new ShoppingBasket(FoodAndBaverages.drinks[indexOf].Name, FoodAndBaverages.drinks[indexOf].Price, FoodAndBaverages.drinks[indexOf].Calories,
                 FoodAndBaverages.drinks[indexOf].Size, FoodAndBaverages.drinks[indexOf].Sugar));
-            Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
+           // Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
             Again();
         }
         public void Again()
@@ -77,11 +77,10 @@ namespace Snackautomat
                         {
                             choiceWhileLoop = false;
                             Payment.Cashier(totalPrice);
+                            Menu.MainMenu();
                         }
-                        Console.WriteLine("Moechten Sie noch einen Artikel einkaufen (max. 3 Artikel)?\n1=[ja]\n2=[nein]");
-                    
+                        Console.WriteLine("Moechten Sie noch einen Artikel einkaufen (max. 3 Artikel)?\n1=[ja]\n2=[nein]");                    
                         choise = Convert.ToInt32(Console.ReadLine());
-
                     
                         if (choise == 1)
                         {
