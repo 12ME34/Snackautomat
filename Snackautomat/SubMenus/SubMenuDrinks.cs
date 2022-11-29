@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snackautomat
 {
-    
+
     internal class SubMenuDrinks   
     {
         
@@ -17,8 +13,8 @@ namespace Snackautomat
             while (again)
             {
                 try
-                {                    
-                    Console.Clear();
+                {                                                   //Sub Menu Drinks
+                    Console.Clear();                        
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur Auswahl:" +
                         "\n\n 1\t-->\tCola\t\t\t"+ FoodAndBaverages.drinks[0].Count+" Stk 0,5l verfuegbar \t  ||\t" + FoodAndBaverages.drinks[1].Count + " Stk 1l verfuegbar" +
                         "\n 2\t-->\tFanta\t\t\t" + FoodAndBaverages.drinks[2].Count + " Stk 0,5l verfuegbar \t  ||\t" + FoodAndBaverages.drinks[3].Count + " Stk 1l verfuegbar" +
@@ -61,8 +57,7 @@ namespace Snackautomat
                             again = false;
                             break;
                      
-                    }
-                    
+                    }                    
 
                 }
                 catch
@@ -73,18 +68,18 @@ namespace Snackautomat
             }
         }
 
-        public void SizeOfDrink(int choice)
+        public void SizeOfDrink(int choice)         //Choice of the drink size
         {
-            ShoppingBasket shoppingBasket = new ShoppingBasket();
+            ShoppingBasket shoppingBasket = new ShoppingBasket();           //Object to get access to the shoppingBasket list
             int counter = -1;
             int sizeOfBottle = 0;
-            int indexDrink = counter + choice + (choice - 1);
+            int indexDrink = counter + choice + (choice - 1);               //Formula to get access to the choosen item but not the exact size 
             int indexOfBottle = 0;            
             bool check = true;
             do
             {
                 try
-                {
+                {                   //SubMenu size and amount of the item in the vending machine 
                     Console.WriteLine("\nDruecke 1 fuer ein " + FoodAndBaverages.drinks[indexDrink].Name + " 0,5l   \t\t" + FoodAndBaverages.drinks[indexDrink].Count+ " Stk verfuegbar\n"+
                         "Druecke 2 fuer ein " + FoodAndBaverages.drinks[indexDrink].Name + " 1,0l   \t\t" + FoodAndBaverages.drinks[indexDrink+1].Count + " Stk verfuegbar");
 
@@ -107,9 +102,10 @@ namespace Snackautomat
                 }
 
             } while (check);
-            indexOfBottle = sizeOfBottle + counter + choice + (choice - 1);
-            
-            if (FoodAndBaverages.drinks[indexOfBottle].Count == 0)
+                           
+            indexOfBottle = sizeOfBottle + counter + choice + (choice - 1);         //Formula to get access to the choosen with the exact size
+
+            if (FoodAndBaverages.drinks[indexOfBottle].Count == 0)                  //Check if the item is still available
             {
                 Console.WriteLine(FoodAndBaverages.drinks[indexOfBottle].Name + " ist aktuell nicht verfuegbar!\nBitte waehlen Sie einen anderen Artikel");
                 System.Threading.Thread.Sleep(4000);

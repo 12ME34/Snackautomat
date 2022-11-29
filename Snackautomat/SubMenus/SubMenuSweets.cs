@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snackautomat
 {
@@ -17,7 +13,7 @@ namespace Snackautomat
             while (again)
             {
                 try
-                {
+                {                                               //Sub Menu sweets
                     
                     Console.Clear();
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur " +
@@ -65,31 +61,31 @@ namespace Snackautomat
                 }
             }
         }
-        public void WhichSweet(string choice)                   //Liste durchsuchen
-                                                                //Eine Liste anlegen in der die items variabel sind!!!
+        public void WhichSweet(string choice)                   //Search in the list for the choosen item to get its index
+                                                                
         {
             ShoppingBasket shoppingBasket = new ShoppingBasket();
             
             int i = 0;
             int indexOfSweet = 0;
-            foreach (var swe in FoodAndBaverages.sweets)
+            foreach (var swe in FoodAndBaverages.sweets)                //All items of list will be searched by the choice of the customer(Snickers, Bounty,...)
             {
                
                 if (swe.Name == choice)
                 {                    
-                    indexOfSweet=i;                    
+                    indexOfSweet=i;                                     //Index of the item in the list
                 }
                 i++;
             }
 
-            if (FoodAndBaverages.sweets[indexOfSweet].Count == 0)
+            if (FoodAndBaverages.sweets[indexOfSweet].Count == 0)       //Check if the chosen item is still in the vending machine
             {
                 Console.WriteLine(FoodAndBaverages.sweets[indexOfSweet].Name + " ist aktuell nicht verfuegbar!\nBitte waehlen Sie einen anderen Artikel");
                 System.Threading.Thread.Sleep(4000);
             }
-            else if (FoodAndBaverages.sweets[indexOfSweet].Count > 0)
+            else if (FoodAndBaverages.sweets[indexOfSweet].Count > 0)   //Decrease the amount of the chosen item 
             {
-                FoodAndBaverages.sweets[indexOfSweet].Count = FoodAndBaverages.sweets[indexOfSweet].Count - 1;        //Anzahl der Getränke in der Sweets wird aktualisiert
+                FoodAndBaverages.sweets[indexOfSweet].Count = FoodAndBaverages.sweets[indexOfSweet].Count - 1;        
                 
                 shoppingBasket.FillShoppingBasketSweets(indexOfSweet);
             }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snackautomat
 {
@@ -10,20 +6,18 @@ namespace Snackautomat
     {
 
         public static void MainMenu()
-        {
-                       
-            bool again = true;
-            //Input of drinks          
+        {                       
+            bool again = true;                  
 
             do
             {
                 try
-                {
+                {                                                                               //Main Menu
                     Console.Clear();
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur " +
-                    "Auswahl:\n\n 1\t-->\tGetraenke\n 2\t-->\tSuesses\n 3\t-->\tPikantes\n 0\t-->\tBeenden"); //Main menu
+                    "Auswahl:\n\n 1\t-->\tGetraenke\n 2\t-->\tSuesses\n 3\t-->\tPikantes\n 0\t-->\tBeenden"); 
                     int choiceMain = Convert.ToInt32(Console.ReadLine());
-                    SubMenuDrinks subMenuDrinks = new SubMenuDrinks();                          //Um eine Mothode einer anderen Klasse aufzurufen muss ein Objekt dieser Klasse erzeugt werden
+                    SubMenuDrinks subMenuDrinks = new SubMenuDrinks();                          //Creat the classes to get access to the methods in those classes                                                                                                
                     SubMenuSweets subMenuSweets = new SubMenuSweets();
                     SubMenuSpicy subMenuSpicy = new SubMenuSpicy();
 

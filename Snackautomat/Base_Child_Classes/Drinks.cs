@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Snackautomat
+﻿namespace Snackautomat
 {
     internal class Drinks : Snacks
     {
@@ -16,12 +10,7 @@ namespace Snackautomat
 
         public double Size { get; set; }
         public int Sugar { get; set; }
-
-        public override string SnackOutput()
-        {
-            return Name;
-
-        }
+              
 
     }
 

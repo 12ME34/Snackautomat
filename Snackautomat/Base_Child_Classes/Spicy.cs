@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Snackautomat
+﻿namespace Snackautomat
 {
     internal class Spicy : Snacks
     {
@@ -14,11 +8,7 @@ namespace Snackautomat
         {
             Weight = weight;
             Carbonhydrats = carbonhydrats;
-        }
-        public override string SnackOutput()
-        {
-            return Convert.ToString(Price);
-        }
+        }       
         
     }
 }

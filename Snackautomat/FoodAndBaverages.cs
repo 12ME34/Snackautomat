@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Snackautomat
 {
-    
-    internal class FoodAndBaverages
+
+    internal class FoodAndBaverages                                             //vending machine will be filled
     {
         public static List<Drinks> drinks = new List<Drinks>();
         public static List<Sweets> sweets = new List<Sweets>();

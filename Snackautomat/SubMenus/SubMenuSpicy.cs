@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snackautomat
 {
@@ -15,8 +11,8 @@ namespace Snackautomat
             while (again)
             {
                 try
-                {                   
-                    
+                {
+                                                        //Sub Menu spicy
                     Console.Clear();
                     Console.WriteLine("\nLiebe Kundin, lieber Kunde,\nvielen Dank fuer Ihren Besuch! \nSie haben folgende Erfrischungen zur " +
                         "Auswahl:\n\n" +
@@ -61,30 +57,30 @@ namespace Snackautomat
                 }
             }
         }
-        public void WhichSpicy(string choice)
+        public void WhichSpicy(string choice)                                           //Search in the list for the choosen item to get its index
         {
             ShoppingBasket shoppingBasket = new ShoppingBasket();
             int i = 0;
             int indexOfSpicy = 0;
-            foreach (var swe in FoodAndBaverages.spicy)
+            foreach (var swe in FoodAndBaverages.spicy)                                 //All items of list will be searched by the choice of the customer(Chips, Peanutes,...)
             {
                 
                 if (swe.Name == choice)
                 {                    
-                    indexOfSpicy = i;
+                    indexOfSpicy = i;                                                   //Index of the item in the list
                 }
                 i++;
             }
           
 
-            if (FoodAndBaverages.spicy[indexOfSpicy].Count == 0)
+            if (FoodAndBaverages.spicy[indexOfSpicy].Count == 0)                        //Check if the chosen item is still in the vending machine
             {
                 Console.WriteLine(FoodAndBaverages.spicy[indexOfSpicy].Name + " ist aktuell nicht verfuegbar!\nBitte waehlen Sie einen anderen Artikel");
                 System.Threading.Thread.Sleep(4000);
             }
             else if (FoodAndBaverages.spicy[indexOfSpicy].Count > 0)
             {
-                FoodAndBaverages.spicy[indexOfSpicy].Count = FoodAndBaverages.spicy[indexOfSpicy].Count - 1;        //Anzahl der Getränke in der Sweets wird aktualisiert
+                FoodAndBaverages.spicy[indexOfSpicy].Count = FoodAndBaverages.spicy[indexOfSpicy].Count - 1;        
                 shoppingBasket.FillShoppingBasketSpicy(indexOfSpicy);
             }
         }

@@ -1,27 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Snackautomat
 {
-    
+
     public class Payment
     {
 
         
         public static void Cashier(double totalPrice)
         {            
-            ShoppingBasket basket = new ShoppingBasket();          
+            ShoppingBasket basket = new ShoppingBasket();                                   //object to get access to the shoppingBasket list
             
             double totalInsertedMoney = 0;
             double insertedMoney = 0;
             
             
-            Console.Clear();
-            for (int i = 0; i < ShoppingBasket.shoppingBasket.Count; i++)
+            Console.Clear();                                                                 
+            for (int i = 0; i < ShoppingBasket.shoppingBasket.Count; i++)                  //list all items 
             {
                 
                 Console.WriteLine(ShoppingBasket.shoppingBasket[i].Name + " " + ShoppingBasket.shoppingBasket[i].Price);
@@ -29,7 +24,7 @@ namespace Snackautomat
             }            
             Console.WriteLine("\nDer komplette Betrag Ihres Einkaus ist " + totalPrice);
             do
-            {
+            {                                                                               //Payment
                 try
                 {
                     
@@ -64,7 +59,7 @@ namespace Snackautomat
                     Console.WriteLine("Ihr Restgeld betraegt " + Math.Round((totalInsertedMoney - totalPrice), 2) + "\nVielen Dank fuer Ihren Einkauf");
 
                     System.Threading.Thread.Sleep(5000);
-                    ShoppingBasket.shoppingBasket.Clear();                  //After the payment, the shoppingBasket List will be deleted
+                    ShoppingBasket.shoppingBasket.Clear();                          //After the payment, the shoppingBasket List will be deleted
                 }
                 catch
                 {

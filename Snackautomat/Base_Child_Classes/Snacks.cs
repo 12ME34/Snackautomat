@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Snackautomat
+﻿namespace Snackautomat
 {
     internal abstract class Snacks 
     {
@@ -19,12 +13,7 @@ namespace Snackautomat
             Price = price;
             Calories = calories;
             Count = count;
-        }
-       public virtual string SnackOutput()
-        {
-           return Name + Price;           
-
-        }
+        }     
 
 
     }

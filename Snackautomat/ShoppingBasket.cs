@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snackautomat
 {
     public class ShoppingBasket
     {
         
-        public static List<ShoppingBasket> shoppingBasket = new List<ShoppingBasket>();       
+        public static List<ShoppingBasket> shoppingBasket = new List<ShoppingBasket>();             //initialize shoppingBasket List
         
         
             public string Name { get; set; }
@@ -31,36 +28,33 @@ namespace Snackautomat
         {
         }
         
-        public void FillShoppingBasketSweets(int indexOf)
+        public void FillShoppingBasketSweets(int indexOf)                       //Add the chosen item in the shoppingBasket List
         {
            
             shoppingBasket.Add(new ShoppingBasket(FoodAndBaverages.sweets[indexOf].Name, FoodAndBaverages.sweets[indexOf].Price, FoodAndBaverages.sweets[indexOf].Calories, 
-                FoodAndBaverages.sweets[indexOf].Weight, FoodAndBaverages.sweets[indexOf].Sugar));            
-           // Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
-            Again();
+                FoodAndBaverages.sweets[indexOf].Weight, FoodAndBaverages.sweets[indexOf].Sugar));         
+            Again();                                                            //Open the again() methode
         }
         public void FillShoppingBasketSpicy(int indexOf)
         {
             shoppingBasket.Add(new ShoppingBasket(FoodAndBaverages.spicy[indexOf].Name, FoodAndBaverages.spicy[indexOf].Price, FoodAndBaverages.spicy[indexOf].Calories,
                 FoodAndBaverages.spicy[indexOf].Weight, FoodAndBaverages.spicy[indexOf].Carbonhydrats));
-           // Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
             Again();
         }
         public void FillShoppingBasketDrink(int indexOf)
         {
             shoppingBasket.Add(new ShoppingBasket(FoodAndBaverages.drinks[indexOf].Name, FoodAndBaverages.drinks[indexOf].Price, FoodAndBaverages.drinks[indexOf].Calories,
-                FoodAndBaverages.drinks[indexOf].Size, FoodAndBaverages.drinks[indexOf].Sugar));
-           // Console.WriteLine("Ausgabe ShoppingBasket " + shoppingBasket[0].Price);
+                FoodAndBaverages.drinks[indexOf].Size, FoodAndBaverages.drinks[indexOf].Sugar));          
             Again();
         }
 
-        public void Again()
+        public void Again()                                                     //Check if the shoppingBasket list is full (3 items)
         {           
-            int counter = shoppingBasket.Count;
+            int counter = shoppingBasket.Count;                             
             int choise = 0;
             double totalPrice = 0;
             bool choiceWhileLoop = true;
-            if (counter <= 3)
+            if (counter <= 3)                                                   
             {
                 Console.WriteLine("Sie haben aktuell folgende Artikel im Einkaufswagen:");
                     for (int i = 0; i < counter; i++)
@@ -73,14 +67,13 @@ namespace Snackautomat
                 {
                     try
                     {
-                        if (counter == 3)
+                        if (counter == 3)                                       
                         {
                             choiceWhileLoop = false;
-                            Payment.Cashier(totalPrice);
-                            Menu.MainMenu();
-                        }
-                        //Console.Clear();
-                        Console.WriteLine("Moechten Sie noch einen Artikel einkaufen (max. 3 Artikel)?\n1=[ja]\n2=[nein]");                    
+                            Payment.Cashier(totalPrice);                           //if the shoppingBasket list is full (3 items) the Chasier methode will be done
+                            Menu.MainMenu();                                       //after the Cashier methode, the programm starts again the MainMenu
+                        }                        
+                        Console.WriteLine("Moechten Sie noch einen Artikel einkaufen (max. 3 Artikel)?\n1=[ja]\n2=[nein]");             //decision if you want to add another item or go to the cashier       
                         choise = Convert.ToInt32(Console.ReadLine());
                     
                         if (choise == 1)
