@@ -64,9 +64,9 @@ namespace Snackautomat
                     
                     }
                 do
-                {
+                {               
                     try
-                    {
+                    {           
                         if (counter == 3)                                       
                         {
                             choiceWhileLoop = false;
@@ -91,14 +91,7 @@ namespace Snackautomat
                         Console.WriteLine("Falsche Eingabe");
                     }
                 } while (choiceWhileLoop);
-                
-                
-                
             }
-           
-
-
         }
     }
-    
 }

@@ -14,11 +14,7 @@
             Calories = calories;
             Count = count;
         }     
-
-
     }
-    
-
 }
     
 

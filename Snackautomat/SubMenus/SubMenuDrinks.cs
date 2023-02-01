@@ -21,7 +21,7 @@ namespace Snackautomat
                         "\n 3\t-->\tMineralwasser\t\t" + FoodAndBaverages.drinks[4].Count + " Stk 0,5l verfuegbar \t  ||\t" + FoodAndBaverages.drinks[5].Count + " Stk 1l verfuegbar" +
                         "\n 4\t-->\tEistee\t\t\t" + FoodAndBaverages.drinks[6].Count + " Stk 0,5l verfuegbar \t  ||\t" + FoodAndBaverages.drinks[7].Count + " Stk 1l verfuegbar\n"+
                         " 0\t-->\tRetour");
-                    //Main menu
+                    
                     int choice = Convert.ToInt32(Console.ReadLine());
 
                     switch (choice)
@@ -114,9 +114,7 @@ namespace Snackautomat
             {
                 FoodAndBaverages.drinks[indexOfBottle].Count = FoodAndBaverages.drinks[indexOfBottle].Count - 1;        //Anzahl der Getränke in der Liste wird aktualisiert                
                 shoppingBasket.FillShoppingBasketDrink(indexOfBottle);
-            }                                                                                                     
-            
-            
+            }  
         }
     }
 }

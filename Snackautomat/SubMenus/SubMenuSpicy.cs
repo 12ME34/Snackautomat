@@ -71,7 +71,6 @@ namespace Snackautomat
                 }
                 i++;
             }
-          
 
             if (FoodAndBaverages.spicy[indexOfSpicy].Count == 0)                        //Check if the chosen item is still in the vending machine
             {
